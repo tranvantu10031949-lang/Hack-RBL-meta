@@ -1,0 +1,27 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local function makeInvincible()
+    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Đặt máu tối đa cực lớn để đảm bảo không bị chết
+    humanoid.MaxHealth = 999999
+    -- Đảm bảo máu luôn ở mức tối đa
+    humanoid.Health = humanoid.MaxHealth
+
+    -- Kết nối sự kiện khi nhân vật nhận sát thương
+    humanoid.TakeDamage:Connect(function(damageAmount)
+        -- Ngay lập tức đặt lại máu về mức tối đa
+        humanoid.Health = humanoid.MaxHealth
+    end)
+end
+
+-- Gọi hàm khi nhân vật được thêm vào game hoặc hồi sinh
+LocalPlayer.CharacterAdded:Connect(makeInvincible)
+
+-- Đảm bảo script chạy ngay cả khi nhân vật đã tồn tại khi script được load
+if LocalPlayer.Character then
+    makeInvincible()
+end
+
