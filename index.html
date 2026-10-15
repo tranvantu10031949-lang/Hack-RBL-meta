@@ -1,224 +1,31 @@
 <!DOCTYPE html>
-<html lang="vi">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Page title</title>
-
-    <style>
-        #nutMenu {
-            background: #FF0000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        #sp {
-            background: yellow;
-            color: red;
-            padding: 10px 5.5px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        #code {
-            background: yellow;
-            color: red;
-            padding: 10px 21px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .maycaorau {
-            font-size: 20px;
-        }
-
-        h1.maycaorau {
-            text-align: center;
-        }
-
-        #onhap {
-            font-size: 20px;
-            text-align: center;
-        }
-
-        #codela {
-            height: 25px;
-            border-radius: 5px;
-        }
-
-        #guicode {
-            background: yellow;
-            color: red;
-            padding: 10px 5.5px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        p {
-            overflow-wrap: anywhere;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>...</title>
 </head>
+<body style="
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+">
 
-<body>
+  <h1 style="
+    color: red;
+    font-size: 15vw;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    animation: nhay 0.5s infinite;
+  ">MÀY LÀ GAY 😂</h1>
 
-    <button id="nutMenu">Menu</button>
-
-    <br><br>
-
-    <div id="menu">
-
-        <button class="child" id="sp">Sản Phẩm</button>
-
-        <br>
-
-        <h1 class="maycaorau">
-            Máy Cạo Lông Cu Trimday
-        </h1>
-
-        <div class="maycaorau">
-
-            <p>
-                Máy cạo lông cu <b>SPOTLESS</b> dòng Trimday
-                (như các phiên bản Trimday Lite, Trimday 2.0
-                hay Trimday 3.0) là thiết bị chuyên dụng giúp
-                nam giới dọn dẹp "cỏ" vùng nhạy cảm một cách
-                an toàn, không đau rát và hạn chế tối đa nguy
-                cơ trầy xước.
-
-                <br><br>
-
-                <b>•Ưu điểm nổi bật của máy cạo Trimday</b>
-
-                <br><br>
-
-                <b>-Lưỡi cạo chuyên dụng</b>: Sử dụng lưỡi sứ cao cấp
-                kết hợp công nghệ bảo vệ da (như TrimGuard),
-                sắc bén với lông nhưng cực kỳ êm ái, không gây
-                kẹt hay cào rách da ở vùng da mỏng nhạy cảm.
-
-                <br><br>
-
-                <b>-Thiết kế kháng nước</b>: Cho phép sử dụng thuận tiện
-                trong phòng tắm hoặc dễ dàng vệ sinh, rửa trực
-                tiếp dưới vòi nước sau khi dùng.
-
-                <br><br>
-
-                <b>-Đầu dao linh hoạt</b>: Nhiều dòng máy hỗ trợ các đầu
-                thay thế hoặc lược cữ đi kèm, giúp điều chỉnh độ
-                dài ngắn của lông theo ý muốn.
-
-                <br><br>
-
-                <b>-Nhỏ gọn và tiện lợi</b>: Trọng lượng nhẹ, thiết kế
-                công thái học dễ cầm nắm và thao tác.
-            </p>
-
-        </div>
-
-        <button class="child" id="code">Code</button>
-
-        <br>
-
-        <div id="onhap">
-
-            <label>Nhập Code</label>
-
-            <input id="codela" type="number" placeholder="Code">
-
-            <button id="guicode">Gửi</button>
-
-        </div>
-
-    </div>
-
-    <script>
-        const nutMenu = document.querySelector("#nutMenu");
-        const menu = document.querySelector("#menu");
-        const sp = document.querySelector("#sp");
-        const maycaorau = document.querySelectorAll(".maycaorau");
-        const code = document.querySelector("#code");
-        const onhap = document.querySelector("#onhap");
-        const gui = document.querySelector("#guicode");
-        const codela = document.querySelector("#codela");
-
-
-        // Ẩn lúc mới mở trang
-        onhap.style.display = "none";
-        menu.style.display = "none";
-
-        maycaorau.forEach(function(el) {
-            el.style.display = "none";
-        });
-
-
-        // Nút Menu
-        nutMenu.addEventListener("click", function() {
-
-            onhap.style.display = "none";
-
-            maycaorau.forEach(function(el) {
-                el.style.display = "none";
-            });
-
-            code.style.display = "block";
-            sp.style.display = "block";
-
-            if (menu.style.display === "none") {
-                menu.style.display = "block";
-            } else {
-                menu.style.display = "none";
-            }
-
-        });
-
-
-        // Nút Sản Phẩm
-        sp.addEventListener("click", function() {
-
-            sp.style.display = "none";
-            code.style.display = "none";
-
-            maycaorau.forEach(function(el) {
-                el.style.display = "block";
-            });
-
-        });
-
-
-        // Nút Code
-        code.addEventListener("click", function() {
-
-            if (onhap.style.display === "none") {
-                onhap.style.display = "block";
-            } else {
-                onhap.style.display = "none";
-            }
-
-        });
-
-
-        // Nút Gửi
-        gui.addEventListener("click", function() {
-
-            if (codela.value === "2062013") {
-
-                alert("Đã giảm giá 50% cho sản phẩm");
-
-            } else {
-
-                alert("Code Sai");
-
-            }
-
-            codela.value = "";
-
-        });
-    </script>
+  <style>
+    @keyframes nhay {
+      50% { color: yellow; transform: scale(1.2); }
+    }
+  </style>
 
 </body>
-
 </html>
